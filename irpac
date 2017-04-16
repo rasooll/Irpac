@@ -1,0 +1,17 @@
+#!/bin/bash
+#IrPAc
+package="$1"
+server="http://iran.mrfaraz.ir/pkg"
+number=`pacman -Sp $package | wc -l`
+if [ $number -gt 0 ];then
+    i="1"
+    while [ $i -le $number ];do
+        echo "Package $i Of $number"
+        link=`pacman -Sp $package | sed -n "$i"p`
+        name=`pacman -Sp $package | sed -n "$i"p | cut -f8 -d"/"`
+        curl -s "$server/pkg.php?link=$link&name=$name"
+        sudo aria2c -x16 --dir=/var/cache/pacman/pkg $server/$name
+        i=$[$i+1]
+    done
+    sudo pacman -S $package
+fi

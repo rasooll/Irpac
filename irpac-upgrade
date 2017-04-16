@@ -1,0 +1,18 @@
+#!/bin/bash
+#IrPAc
+server="http://iran.mrfaraz.ir/pkg"
+echo "Password need for 'sudo pacman -Sy'"
+sudo pacman -Sy
+number=`pacman -Sup | wc -l`
+if [ $number -gt 0 ];then
+    i="2"
+    while [ $i -le $number ];do
+        echo "Package $i Of $number"
+        link=`pacman -Sup | sed -n "$i"p`
+        name=`pacman -Sup | sed -n "$i"p | cut -f8 -d"/"`
+        curl -s "$server/pkg.php?link=$link&name=$name"
+        sudo aria2c -x16 --dir=/var/cache/pacman/pkg $server/$name
+        i=$[$i+1]
+    done
+    sudo pacman -Su
+fi
