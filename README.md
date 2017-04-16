@@ -14,7 +14,7 @@
 <code>http://example.ir/arch/pkg.php</code><br />
 شما باید درون فایل های 
 <code>irpac</code> و <code>irpac-upgrade</code>
-مقدار status را برابر با 
+مقدار server را برابر با 
 <code dir="ltr">server="http://example.ir/arch/"</code>
 قرار دهید
 <br />
