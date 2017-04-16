@@ -1,6 +1,6 @@
 #!/bin/bash
 #IrPAc
-server="http://iran.mrfaraz.ir/pkg"
+server="Your Server Address"
 echo "Password need for 'sudo pacman -Sy'"
 sudo pacman -Sy
 number=`pacman -Sup | wc -l`
