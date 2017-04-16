@@ -19,7 +19,7 @@
 قرار دهید
 <br />
 سپس برای نصب برنامه از دستورات زیر استفاده کنید:<br />
-<div align=left><code dir="ltr">$ sudo mv irpac /usr/bin/irpac</code>
+<div align=left><code dir="ltr">$ sudo mv irpac /usr/bin/irpac</code><br />
 <code dir="ltr">$ sudo mv irpac-upgrad /usr/bin/irpac-upgrade</code>
 </div>
 <p dir="rtl" align="right"><strong>نحوه استفاده:</strong><br />
