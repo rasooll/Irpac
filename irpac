@@ -1,5 +1,6 @@
 #!/bin/bash
 #IrPAc
+#github.com/rasoolsf
 package="$1"
 server="Your Server Address"
 number=`pacman -Sp $package | wc -l`
